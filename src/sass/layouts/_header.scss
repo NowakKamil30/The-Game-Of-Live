@@ -1,0 +1,24 @@
+.header{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-color;
+    font-family: 'Roboto Slab', serif;
+    transition:1.5s;
+    &--invisible
+    {
+        height: 0;
+    }
+    &__title
+    {
+        &--invisible
+        {
+            font-size: 0;
+        }
+        transition: 1.5s;
+        text-transform: uppercase;
+        font-size: 50px;
+    }
+}

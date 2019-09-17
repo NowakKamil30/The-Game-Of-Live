@@ -1,0 +1,22 @@
+.board
+{
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(var(--size),1fr);
+    grid-template-rows: repeat(var(--size),1fr);
+    height: 100%;
+    gap:1px;
+    &__element{
+        transition: 0.1s;
+        min-width: 5px;
+        min-height: 5px;
+        &--active
+        {
+            background-color: $active-color;
+        }
+        &--inactive
+        {
+            background-color: $inactive-color;
+        }
+    } 
+}
