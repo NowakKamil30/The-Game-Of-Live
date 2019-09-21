@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/The-Game-Of-Live/static/css/main.ac98e15d.chunk.css",
+    "main.js": "/The-Game-Of-Live/static/js/main.b523000e.chunk.js",
+    "main.js.map": "/The-Game-Of-Live/static/js/main.b523000e.chunk.js.map",
+    "runtime~main.js": "/The-Game-Of-Live/static/js/runtime~main.2440da77.js",
+    "runtime~main.js.map": "/The-Game-Of-Live/static/js/runtime~main.2440da77.js.map",
+    "static/js/2.f3e95dd5.chunk.js": "/The-Game-Of-Live/static/js/2.f3e95dd5.chunk.js",
+    "static/js/2.f3e95dd5.chunk.js.map": "/The-Game-Of-Live/static/js/2.f3e95dd5.chunk.js.map",
+    "index.html": "/The-Game-Of-Live/index.html",
+    "precache-manifest.58b764f8202d3f0a258729bcd4e0c9ad.js": "/The-Game-Of-Live/precache-manifest.58b764f8202d3f0a258729bcd4e0c9ad.js",
+    "service-worker.js": "/The-Game-Of-Live/service-worker.js",
+    "static/css/main.ac98e15d.chunk.css.map": "/The-Game-Of-Live/static/css/main.ac98e15d.chunk.css.map"
+  }
+}
