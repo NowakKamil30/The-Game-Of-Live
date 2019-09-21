@@ -1,6 +1,5 @@
-const textOnlyNumber=text=>{
+const textOnlyNumber=(text,maxLength)=>{
     let currentText="";
-    const maxLength=2;
     let length;
     if(text.length<maxLength)
     {

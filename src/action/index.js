@@ -1,4 +1,9 @@
-import {BOADR_SIZE,START_GAME,GAME,SHOW_TOP_MENU} from "./types";
+import {BOADR_SIZE,
+        START_GAME,
+        GAME,
+        SHOW_TOP_MENU,
+        RESET_GAME,
+        MOBILE} from "./types";
 
 export const borderSizeChange=size=>(
     {
@@ -17,8 +22,20 @@ export const game=()=>(
         type: GAME,
     }
 )
-export const showTopMenu=()=>(
+export const showTopMenu=(positionY)=>(
     {
-        type: SHOW_TOP_MENU
+        type: SHOW_TOP_MENU,
+        positionY:positionY
+    }
+)
+export const resetGame=()=>(
+    {
+        type:RESET_GAME
+    }
+)
+export const screenSize=(width)=>(
+    {
+        type: MOBILE,
+        mobile: width<=1024?true:false
     }
 )

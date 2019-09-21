@@ -1,8 +1,8 @@
 class GameEngine
 {
-    constructor(size=10)
+    constructor(size)
     {
-        this.size=size<10?10:size;
+        this.size=size
     }
     newGameBoard()
     {
@@ -16,6 +16,7 @@ class GameEngine
             } 
             board.push(tempArray)   
         }
+        console.log(board);
         return board;
     }
     nextTurn(board)
@@ -123,7 +124,7 @@ class GameEngine
         }
         for(let i=0;i<firstArray.length;i++)
         {
-            for(let j=0;j<firstArray.length;j++)
+            for(let j=0;j<secondArray.length;j++)
             {
                 if(firstArray[i][j]!==secondArray[i][j])
                 {

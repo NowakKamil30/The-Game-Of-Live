@@ -6,7 +6,7 @@ import {game} from "../action/index";
 class Board extends Component
 {
     getBoardTable=()=>this.props.game();
-    boardCreation=(array)=>array.map((elements,i)=>elements.map((element,index)=><BoardElement active={element} key={i+index}/>));
+    boardCreation=(array)=>array.map((elements,i)=>elements.map((element,index)=><BoardElement active={element}  position={i+""+index} key={i+""+index}/>));
 
 
      componentDidMount() {
@@ -16,6 +16,7 @@ class Board extends Component
      {
          clearInterval(this.timer);
      }
+
     render(){
         return(
             <div className="board">

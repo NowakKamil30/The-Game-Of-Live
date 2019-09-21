@@ -5,7 +5,12 @@ export default(state=INITIAL_STATE,action)=>{
     switch(action.type)
     {
         case SHOW_TOP_MENU:
-        return {...state}
+        let show=false;
+        if(action.positionY<=200)
+        {
+            show=true;
+        }
+        return {...state,showTopMenu:show}
         default:
         return state;
     }

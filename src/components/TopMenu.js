@@ -2,30 +2,58 @@ import React from 'react';
 import InputText from "./InputText";
 import Button from "./Button";
 import {connect} from "react-redux";
-import {borderSizeChange, startGame} from "../action";
+import {borderSizeChange,
+        startGame,
+        resetGame} from "../action";
 class TopMenu extends React.Component{
     onBorderSizeChange= e=>this.props.borderSizeChange(e.target.value);
     startGameClick=start=>this.props.startGame(start);
-    renderTopMenu(startRender){
-        const {boardSize, start}=this.props;
+    resetGameClick=()=>this.props.resetGame();
+    showMenu=(start,show,mobile)=>{
+        console.log("m",mobile);
+        if(mobile)
+        {
+            return true
+        }
+        if(!start)
+        {
+            return true;
+        }
+        else if(show)
+        {
+            return true;
+        }
+        return false;
+    }
+    renderTopMenu(){
+        const {boardSize, start,show,mobile}=this.props;
             return(
-                        <nav
-                        className={`top_menu ${start?"top_menu--invisible":""}`}
+                    <nav
+                    className={`top_menu ${this.showMenu(start,show,mobile)?"":"top_menu--invisible"}`}
+                    >
+                        <InputText 
+                        onChange={this.onBorderSizeChange} 
+                        value={boardSize} 
+                        placeholder={`max size: ${mobile?"50":"99"}`} 
+                        className="input top_menu__input"
                         >
-                            <InputText 
-                            onChange={this.onBorderSizeChange} 
-                            value={boardSize} 
-                            placeholder="board size(size x size)" 
-                            className="input top_menu__input"
-                            >
-                            </InputText>
+                        </InputText>
+                        <div className="top_menu__button-container">
                             <Button 
                             onClick={()=>{this.startGameClick(start)}}
                             className="button top_menu__button"
                             >
                             {start?"stop":"start"}
                             </Button>
-                        </nav>
+                            {start?
+                            <Button
+                            className="button top_menu__button"
+                            onClick={this.resetGameClick}
+                            >
+                            reset
+                            </Button>:null}
+                        </div>
+                    </nav>
             )
     }
 
@@ -40,7 +68,9 @@ class TopMenu extends React.Component{
 const mapStateToProps=state=>{
     return{
         boardSize: state.mainGame.boardSize,
-        start: state.mainGame.start
+        start: state.mainGame.start,
+        show: state.showMenu.showTopMenu,
+        mobile: state.mainGame.mobile
     }
 }
-export default connect(mapStateToProps,{borderSizeChange, startGame})(TopMenu);
+export default connect(mapStateToProps,{borderSizeChange, startGame, resetGame})(TopMenu);

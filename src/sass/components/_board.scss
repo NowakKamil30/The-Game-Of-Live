@@ -8,8 +8,8 @@
     gap:1px;
     &__element{
         transition: 0.1s;
-        min-width: 5px;
-        min-height: 5px;
+        min-width: 1px;
+        min-height: 1px;
         &--active
         {
             background-color: $active-color;
